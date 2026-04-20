@@ -1,0 +1,135 @@
+{
+  "service_types": [
+    "_afpovertcp._tcp.local",
+    "_device-info._tcp.local",
+    "_http._tcp.local",
+    "_qdiscover._tcp.local",
+    "_smb._tcp.local",
+    "_workstation._tcp.local"
+  ],
+  "entries": [
+    {
+      "instance": "slw-nas [24:5e:be:69:a3:13]",
+      "service": "_workstation._tcp.local",
+      "domain": "local.",
+      "hostname": "slw-nas.local",
+      "port": 9,
+      "ipv4": [
+        "192.168.1.23"
+      ],
+      "ipv6": [
+        "fe80::265e:beff:fe69:a313"
+      ],
+      "ttl": 10
+    },
+    {
+      "instance": "slw-nas",
+      "service": "_http._tcp.local",
+      "domain": "local.",
+      "hostname": "slw-nas.local",
+      "port": 5000,
+      "ipv4": [
+        "192.168.1.23"
+      ],
+      "ipv6": [
+        "fe80::265e:beff:fe69:a313"
+      ],
+      "text": [
+        "path=/"
+      ],
+      "text_kv": {
+        "path": "/"
+      },
+      "ttl": 10
+    },
+    {
+      "instance": "slw-nas",
+      "service": "_smb._tcp.local",
+      "domain": "local.",
+      "hostname": "slw-nas.local",
+      "port": 445,
+      "ipv4": [
+        "192.168.1.23"
+      ],
+      "ipv6": [
+        "fe80::265e:beff:fe69:a313"
+      ],
+      "ttl": 10
+    },
+    {
+      "instance": "slw-nas",
+      "service": "_qdiscover._tcp.local",
+      "domain": "local.",
+      "hostname": "slw-nas.local",
+      "port": 5000,
+      "ipv4": [
+        "192.168.1.23"
+      ],
+      "ipv6": [
+        "fe80::265e:beff:fe69:a313"
+      ],
+      "text": [
+        "accessType=https",
+        "accessPort=86",
+        "model=TS-X64",
+        "displayModel=TS-464C",
+        "fwVer=5.2.9",
+        "fwBuildNum=20260214"
+      ],
+      "text_kv": {
+        "accessType": "https",
+        "accessPort": "86",
+        "model": "TS-X64",
+        "displayModel": "TS-464C",
+        "fwVer": "5.2.9",
+        "fwBuildNum": "20260214"
+      },
+      "ttl": 10
+    },
+    {
+      "instance": "slw-nas(AFP)",
+      "service": "_device-info._tcp.local",
+      "domain": "local.",
+      "hostname": "slw-nas.local",
+      "ipv4": [
+        "192.168.1.23"
+      ],
+      "ipv6": [
+        "fe80::265e:beff:fe69:a313"
+      ],
+      "text": [
+        "model=Xserve"
+      ],
+      "text_kv": {
+        "model": "Xserve"
+      },
+      "ttl": 10
+    },
+    {
+      "instance": "slw-nas(AFP)",
+      "service": "_afpovertcp._tcp.local",
+      "domain": "local.",
+      "hostname": "slw-nas.local",
+      "port": 548,
+      "ipv4": [
+        "192.168.1.23"
+      ],
+      "ipv6": [
+        "fe80::265e:beff:fe69:a313"
+      ],
+      "ttl": 10
+    }
+  ],
+  "answers": {
+    "ptr": [
+      "_workstation._tcp.local",
+      "_http._tcp.local",
+      "_smb._tcp.local",
+      "_qdiscover._tcp.local",
+      "_device-info._tcp.local",
+      "_afpovertcp._tcp.local"
+    ]
+  },
+  "observed_at": "2026-04-20T14:00:00Z",
+  "interface": "Ethernet"
+}
