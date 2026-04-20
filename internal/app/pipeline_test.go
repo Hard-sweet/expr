@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"reflect"
+	"strings"
 	"testing"
 	"time"
 
@@ -149,7 +150,7 @@ func assertGolden(t *testing.T, goldenName string, got []byte) {
 	if err != nil {
 		t.Fatalf("read golden %s: %v", goldenName, err)
 	}
-	if !bytes.Equal(got, want) {
+	if normalizeNewlines(string(got)) != normalizeNewlines(string(want)) {
 		t.Fatalf("golden mismatch for %s\n\nwant:\n%s\n\ngot:\n%s", goldenName, want, got)
 	}
 }
@@ -164,4 +165,8 @@ func findService(t *testing.T, services []model.ServiceRecord, name string, port
 	}
 	t.Fatalf("service %s/%d not found", name, port)
 	return model.ServiceRecord{}
+}
+
+func normalizeNewlines(value string) string {
+	return strings.ReplaceAll(value, "\r\n", "\n")
 }
